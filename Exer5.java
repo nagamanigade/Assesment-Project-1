@@ -1,43 +1,34 @@
-package lab3;
-import java.io.*;
+package lab6;
+import java.util.Collections;
+import java.util.List;
+import java.util.ArrayList;
 public class Exer5 {
-
+	//create getsecondsmallest method
+		public int getSecondSmallest(int[] arr)
+		{
+			//create arraylist as a list iterator
+			List<Integer> intList=new ArrayList<Integer>();
+			//using for loop
+			for(int i:arr)
+			{
+				intList.add(i);
+				
+			}
+			//sort the list elements
+			Collections.sort(intList);
+			//return integer value
+			return intList.get(1);
+		}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		File file = new Filenull;
-		FileInputStream fileInputStream = new FileInputStream(file);
-		InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-		String line;
-		int wordCount = 0;
-		int characterCount = 0;
-		int paraCount = 0;
-		int whiteSpaceCount = 0;
-		int sentenceCount = 0;
-
-		while ((line = bufferedReader.readLine()) != null) {
-			if (line.equals("")) {
-				paraCount += 1;
-			}
-			else {
-				characterCount += line.length();
-				String words[] = line.split("\\s+");
-				wordCount += words.length;
-				whiteSpaceCount += wordCount - 1;
-				String sentence[] = line.split("[!?.:]+");
-				sentenceCount += sentence.length;
-			}
-		}
-		if (sentenceCount >= 1) {
-			paraCount++;
-		}
-		System.out.println("Total word count = "+ wordCount);
-		System.out.println("Total number of sentences = "+ sentenceCount);
-		System.out.println("Total number of characters = "+ characterCount);
-		System.out.println("Number of paragraphs = "+ paraCount);
-		System.out.println("Total number of whitespaces = "+ whiteSpaceCount);
-
+		//create an obj
+				Exer5 e=new Exer5();
+				//given array elements
+				int arr[]= {23,43,54,24,56,75,86,45,64,34};
+				//to find second elements assign array elements one by one 
+				int i=e.getSecondSmallest(arr);
+				//and print second smallest elements
+				System.out.println(i);
 	}
 
 }
